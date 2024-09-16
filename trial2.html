@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Albus Brooks</title>
+    <style>
+        /* General Styles */
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            height: 100%;
+        }
+
+        .container {
+            display: flex;
+            height: 100vh;
+            width: 100%;
+            box-sizing: border-box;
+            background-image: url('images/albus.jpg'); /* Add the path to your background image */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: relative;
+        }
+
+        /* Black overlay with opacity */
+        .container::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: -1;
+        }
+
+        /* Left section for the person */
+        .left-section {
+            flex: 1; /* Takes up remaining space */
+        }
+
+        /* Right section for the title and nav */
+        .right-section {
+            flex-basis: 40%; /* Adjust this to control how much space the right section takes */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 20px;
+            z-index: 2;
+        }
+
+        /* Title styling */
+        .title {
+            font-size: 40px;
+            font-weight: bold;
+            color: #ffffff;
+            margin-bottom: 20px;
+        }
+
+        /* Navigation menu styling */
+        .nav {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: row; /* Horizontal by default for desktop */
+        }
+
+        .nav li {
+            margin-right: 15px;
+        }
+
+        .nav li:last-child {
+            margin-right: 0; /* Remove margin from the last item */
+        }
+
+        .nav li a {
+            text-decoration: none;
+            font-size: 16px;
+            color: #ffffff;
+            text-transform: uppercase;
+        }
+
+        .nav li a:hover {
+            color: #cccccc;
+        }
+
+        /* Logo on the top-left */
+        .logo {
+            position: absolute;
+            top: 25px;
+            left: 75px;
+            z-index: 2;
+        }
+
+        .logo img {
+            width: 100px;
+            height: auto;
+        }
+
+        /* Responsive Styles for Mobile */
+        @media (max-width: 768px) {
+            .right-section {
+                flex-basis: 100%; /* Make the right section take up full width on smaller screens */
+                align-items: center;
+            }
+
+            .title {
+                font-size: 30px;
+            }
+
+            .nav {
+                flex-direction: column; /* Stack menu items vertically on mobile */
+                align-items: center;
+            }
+
+            .nav li {
+                margin: 10px 0; /* Add space between menu items */
+            }
+
+            .logo img {
+                width: 80px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="logo">
+    <img src="images/tomeapplogo.png" alt="Logo"> <!-- Replace logo.png with your logo image path -->
+</div>
+
+<div class="container">
+    <div class="left-section"></div> <!-- Empty div to represent the left side with the background image -->
+    <div class="right-section">
+        <div class="title">Albus Brooks</div>
+        <ul class="nav">
+            <li><a href="#">Shop</a></li>
+            <li><a href="#">Patreon</a></li>
+            <li><a href="#">Booking</a></li>
+            <li><a href="#">YouTube</a></li>
+            <li><a href="#">Spotify</a></li>
+        </ul>
+    </div>
+</div>
+
+</body>
+</html>
