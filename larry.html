@@ -19,7 +19,6 @@
             width: 100%;
             box-sizing: border-box;
             position: relative;
-            z-index: 1;
         }
 
         /* Background image and dark overlay */
@@ -38,30 +37,29 @@
 
         /* Black overlay with opacity to dim the image */
         .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.35); /* Half as dim */
-    z-index: -1; /* Overlay behind the content but in front of the background image */
-}
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.35); /* Slight dim effect */
+            z-index: -1; /* Behind content but in front of background image */
+        }
 
-
-        /* Right section for the title and nav */
+        /* Left section for title and navigation */
         .left-section {
-            flex-basis: 40%; /* Adjust this to control how much space the right section takes */
+            flex-basis: 40%;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: flex-start;
-            padding: 90px;
+            padding: 60px;
             z-index: 2;
         }
 
         /* Title styling */
         .title {
-            font-size: 40px;
+            font-size: 3rem;
             font-weight: bold;
             color: #ffffff;
             margin-bottom: 20px;
@@ -73,7 +71,7 @@
             padding: 0;
             margin: 0;
             display: flex;
-            flex-direction: row; /* Horizontal by default for desktop */
+            flex-direction: row; /* Horizontal by default */
         }
 
         .nav li {
@@ -81,12 +79,12 @@
         }
 
         .nav li:last-child {
-            margin-right: 0; /* Remove margin from the last item */
+            margin-right: 0;
         }
 
         .nav li a {
             text-decoration: none;
-            font-size: 16px;
+            font-size: 1rem;
             color: #ffffff;
             text-transform: uppercase;
         }
@@ -95,11 +93,11 @@
             color: #cccccc;
         }
 
-        /* Logo on the top-left */
+        /* Logo styling */
         .logo {
             position: absolute;
             top: 25px;
-            left: 75px;
+            left: 50px;
             z-index: 2;
         }
 
@@ -108,28 +106,52 @@
             height: auto;
         }
 
+        /* Media query for desktop - ensure single line title */
+        @media (min-width: 769px) {
+            .title {
+                white-space: nowrap; /* Ensure the title doesn't break into multiple lines on desktop */
+            }
+        }
+
         /* Responsive Styles for Mobile */
         @media (max-width: 768px) {
             .left-section {
-                flex-basis: 100%; /* Make the left section take up full width on smaller screens */
+                flex-basis: 100%;
+                padding: 20px;
                 align-items: center;
             }
 
             .title {
-                font-size: 30px;
+                font-size: 2rem;
+                text-align: center;
+                white-space: normal; /* Allow wrapping on mobile */
             }
 
             .nav {
-                flex-direction: column; /* Stack menu items vertically on mobile */
+                flex-direction: column;
                 align-items: center;
             }
 
             .nav li {
-                margin: 10px 0; /* Add space between menu items */
+                margin: 10px 0;
+            }
+
+            .logo {
+                left: 20px;
             }
 
             .logo img {
                 width: 80px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .title {
+                font-size: 1.5rem;
+            }
+
+            .nav li a {
+                font-size: 0.875rem;
             }
         }
     </style>
@@ -137,7 +159,7 @@
 <body>
 
 <div class="logo">
-    <img src="images/IdeasHaveConseuqneces.png" alt="Logo"> <!-- Replace logo.png with your logo image path -->
+    <img src="images/IdeasHaveConseuqneces.png" alt="Logo"> <!-- Replace with your logo image path -->
 </div>
 
 <div class="container">
@@ -154,7 +176,6 @@
             <li><a href="#">Give</a></li>
         </ul>
     </div>
-    <div class="right-section"></div>
 </div>
 
 </body>
