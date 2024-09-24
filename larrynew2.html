@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IDEAS HAVE CONSEQUENCES</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Lato:wght@400&display=swap" rel="stylesheet">
+    <style>
+        /* General Styles */
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Lato', sans-serif; /* Apply Lato for general text */
+            height: 100%;
+        }
+
+        .container {
+            display: flex;
+            height: 100vh;
+            width: 100%;
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        /* Background image and dark overlay */
+        .background {
+            background-image: url('images/Larry_Taunton.jpg'); /* Desktop background image */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1; /* Make sure the background is behind the content */
+        }
+
+        /* Black overlay with opacity to dim the image */
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.35); /* Slight dim effect */
+            z-index: -1; /* Behind content but in front of background image */
+        }
+
+        /* Left section for title and navigation */
+        .left-section {
+            flex-basis: 40%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 60px;
+            z-index: 2;
+        }
+
+        /* Title styling */
+        .title {
+            font-size: 3rem;
+            font-family: 'Cinzel', serif; /* Use Cinzel for title */
+            font-weight: bold;
+            color: #ffffff;
+            margin-bottom: 20px;
+        }
+
+        /* Navigation menu styling */
+        .nav {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: row; /* Horizontal by default */
+        }
+
+        .nav li {
+            margin-right: 15px;
+        }
+
+        .nav li:last-child {
+            margin-right: 0;
+        }
+
+        .nav li a {
+            text-decoration: none;
+            font-size: 1rem;
+            font-family: 'Lato', sans-serif; /* Use Lato for navigation text */
+            color: #ffffff;
+            text-transform: uppercase;
+        }
+
+        .nav li a:hover {
+            color: #cccccc;
+        }
+
+        /* Logo styling */
+        .logo {
+            position: absolute;
+            top: 25px;
+            left: 50px;
+            z-index: 2;
+        }
+
+        .logo img {
+            width: 100px;
+            height: auto;
+        }
+
+        /* Media query for desktop - ensure single line title */
+        @media (min-width: 769px) {
+            .title {
+                white-space: nowrap; /* Ensure the title doesn't break into multiple lines on desktop */
+            }
+        }
+
+        /* Responsive Styles for Mobile */
+        @media (max-width: 768px) {
+            .background {
+                background-image: url('images/larry-mobile.png'); /* Mobile-specific background image */
+            }
+
+            .left-section {
+                flex-basis: 100%;
+                padding: 20px;
+                align-items: center;
+            }
+
+            .title {
+                font-size: 2rem;
+                text-align: center;
+                white-space: normal; /* Allow wrapping on mobile */
+            }
+
+            .nav {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .nav li {
+                margin: 10px 0;
+            }
+
+            .logo {
+                left: 20px;
+            }
+
+            .logo img {
+                width: 80px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .title {
+                font-size: 1.5rem;
+            }
+
+            .nav li a {
+                font-size: 0.875rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="logo">
+    <img src="images/IdeasHaveConseuqneces.png" alt="Logo"> <!-- Replace with your logo image path -->
+</div>
+
+<div class="container">
+    <div class="background"></div> <!-- Background image div -->
+    <div class="overlay"></div> <!-- Dark overlay div -->
+    <div class="left-section">
+        <div class="title">IDEAS HAVE CONSEQUENCES</div>
+        <ul class="nav">
+            <li><a href="#">Latest</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Watch</a></li>
+            <li><a href="#">Courses</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Give</a></li>
+        </ul>
+    </div>
+</div>
+
+</body>
+</html>
